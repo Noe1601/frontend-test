@@ -20,7 +20,7 @@ import { CoreModule } from './core/core.module';
     BrowserAnimationsModule,
     MaterialModule,
     SharedModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

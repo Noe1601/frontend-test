@@ -1,5 +1,6 @@
 <mat-card>
 
+    <button mat-raised-button color="primary" style="float: right; margin-bottom: 50px;" (click)="showCreateForm()">Crear libros</button>
     <h2>Lista de libros</h2>
 
     <div class="mat-elevation-z8">
@@ -37,6 +38,15 @@
           <ng-container matColumnDef="publishDate">
             <th mat-header-cell *matHeaderCellDef> Fecha publicacion </th>
             <td mat-cell *matCellDef="let element"> {{element.publishDate | date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Acciones">
+            <th mat-header-cell *matHeaderCellDef> Acctiones </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button color="accent" style="margin-right: 10px;" (click)="showDetail(element)">Detalle</button>
+              <button mat-raised-button color="primary" style="margin-right: 10px;" (click)="showCreateForm(element)">Editar</button>
+              <button mat-raised-button color="warn" (click)="deleteBook(element)">Eliminar</button>
+            </td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
